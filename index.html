@@ -1,3 +1,137 @@
-Teste
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Responsivo com Mapa e Tema</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuração do Tailwind para usar cores escuras/claras no modo 'class'
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
 
-<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1UEuedI9rJBnSSCofAedHn95eMAYEqzQ&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+    <header class="shadow-md sticky top-0 z-50 bg-white dark:bg-gray-800 transition-colors duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            
+            <a href="#" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">
+                Meu Site
+            </a>
+
+            <div class="hidden md:flex space-x-4">
+                <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-400">Início</a>
+                <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-400">Sobre</a>
+                <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-400">Contato</a>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <label for="theme-select" class="text-sm">Tema:</label>
+                <select id="theme-select" class="p-1 border rounded-md bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 cursor-pointer focus:ring-indigo-500 focus:border-indigo-500">
+                    <option value="system">Padrão do Sistema</option>
+                    <option value="light">Claro ☀️</option>
+                    <option value="dark">Escuro 🌙</option>
+                </select>
+                <button class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col">
+        
+        <section class="mb-6 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 shadow-inner">
+            <h2 class="text-2xl font-semibold mb-2 text-indigo-600 dark:text-indigo-400">Nossa Localização Central</h2>
+            <p class="mb-3">
+                Antes de visualizarmos o mapa, é importante destacar que nossa sede está localizada em uma região de fácil acesso e estratégica para todos os nossos clientes. 
+                Utilize o mapa abaixo para traçar rotas e nos visitar. Estamos esperando por você!
+            </p>
+        </section>
+
+        <section class="flex-grow flex flex-col">
+            <h2 class="text-2xl font-semibold mb-3 text-indigo-600 dark:text-indigo-400">Veja-nos no Mapa</h2>
+            <div class="relative w-full flex-grow overflow-hidden rounded-lg shadow-xl" style="min-height: 400px;"> 
+                
+                <iframe 
+                src="https://www.google.com/maps/d/u/0/embed?mid=1UEuedI9rJBnSSCofAedHn95eMAYEqzQ&ehbc=2E312F&noprof=1" 
+                class="absolute top-0 left-0 w-full h-full border-0" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+                
+                <!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1UEuedI9rJBnSSCofAedHn95eMAYEqzQ&ehbc=2E312F&noprof=1" width="640" height="480"></iframe> -->
+            </div>
+        </section>
+
+        <section class="flex-grow flex flex-col">
+            <h2 class="text-2xl font-semibold mb-3 text-indigo-600 dark:text-indigo-400">Veja-nos no Mapa</h2>
+            <div class="relative w-full flex-grow overflow-hidden rounded-lg shadow-xl" style="min-height: 400px;"> 
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117075.7601675769!2d-46.721461999999996!3d-23.498863000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a6860d5c07%3A0x673c68afcf3ef282!2sS%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                    class="absolute top-0 left-0 w-full h-full border-0" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+        </section>
+
+        <section class="mt-6 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 shadow-inner">
+            <h2 class="text-2xl font-semibold mb-2 text-indigo-600 dark:text-indigo-400">Informações Adicionais</h2>
+            <p>
+                Este mapa é totalmente interativo e se ajusta automaticamente ao tamanho do seu dispositivo. 
+                Sinta-se à vontade para explorar a área e conferir nossos arredores. 
+                Para qualquer dúvida, entre em contato pelo nosso telefone ou e-mail.
+            </p>
+        </section>
+
+    </main>
+
+    <script>
+        const themeSelect = document.getElementById('theme-select');
+        const htmlElement = document.documentElement;
+        
+        // Função para aplicar o tema
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                htmlElement.classList.add('dark');
+            } else if (theme === 'light') {
+                htmlElement.classList.remove('dark');
+            } else if (theme === 'system') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    htmlElement.classList.add('dark');
+                } else {
+                    htmlElement.classList.remove('dark');
+                }
+            }
+            localStorage.setItem('theme', theme); // Salva a preferência
+        }
+        
+        // Função para inicializar o tema ao carregar a página
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'system';
+            themeSelect.value = savedTheme;
+            applyTheme(savedTheme);
+
+            // Listener para mudanças no sistema operacional (se o tema for 'system')
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                if (localStorage.getItem('theme') === 'system') {
+                    applyTheme('system');
+                }
+            });
+        }
+        
+        // Listener para a mudança no seletor
+        themeSelect.addEventListener('change', (event) => {
+            applyTheme(event.target.value);
+        });
+        
+        // Inicializa o tema
+        initializeTheme();
+    </script>
+</body>
+</html>
